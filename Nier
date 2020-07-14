@@ -1,6 +1,5 @@
 #!/bin/bash
 #Nier Installation Clone
-#See https://www.youtube.com/watch?v=AczZoNeso04 for reference.
 
 #Resetting Invalid to 0
 INVALID=0
@@ -11,10 +10,7 @@ shopt -s nocasematch
 #Will Question
 function will {
 clear
-if [ "$INVALID" = "1" ]; then
-	echo Invalid. Please try again.
- 	INVALID=0
-fi
+invalid
 echo 'LOADING - CHECKING SYSTEM...'
 echo ' '
 echo 'Will. From where does our will come?'
@@ -37,10 +33,7 @@ read -n 1 -p "Please select 1, 2 or 3." answer
 #Nothingness Question
 function nothingness {
 clear
-if [ "$INVALID" = "1" ]; then
-	echo Invalid. Please try again.
-	INVALID=0
-fi
+invalid
 echo 'LOADING - CHECKING SYSTEM...'
 echo ' '
 echo 'Nothingness. Is there any meaning to living in this world?'
@@ -63,10 +56,7 @@ read -n 1 -p "Please select 1, 2 or 3." answer
 #God Question
 function god {
 clear
-if [ "$INVALID" = "1" ]; then
-	echo Invalid. Please try again.
-	INVALID=0
-fi
+invalid
 echo 'LOADING - CHECKING SYSTEM...'
 echo ' '
 echo 'God. How did God create us?'
@@ -89,10 +79,7 @@ read -n 1 -p "Please select 1, 2 or 3." answer
 #Chance question
 function chance {
 clear 
-if [ "$INVALID" = "1" ]; then
-	echo Invalid. Please try again.
-	INVALID=0
-fi
+invalid
 echo 'LOADING - CHECKING SYSTEM...'
 echo ' '
 echo 'Chance. Was this world created by random chance?'
@@ -115,10 +102,7 @@ read -n 1 -p "Please select 1, 2 or 3." answer
 #Exit/care question
 function care {
 clear
-if [ "$INVALID" = "1" ]; then
-	echo Invalid. Please try again.
-	INVALID=0
-fi
+invalid
 echo 'LOADING - CHECKING SYSTEM...'
 echo ' '
 echo 'The game is currently being installed.'
@@ -138,6 +122,13 @@ read -n 1 -p "y or n?" answer
 		INVALID=1
 		care
 	fi
+}
+
+function invalid {
+if [ "$INVALID" = "1" ]; then
+	echo Invalid. Please try again.
+	INVALID=0
+fi
 }
 
 #Start Script from Will question
