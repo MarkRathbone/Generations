@@ -1,5 +1,6 @@
 #!/bin/bash
 #Nier Installation Clone
+#See https://www.youtube.com/watch?v=AczZoNeso04 for reference.
 
 #Resetting Invalid to 0
 INVALID=0
