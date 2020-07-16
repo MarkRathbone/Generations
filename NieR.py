@@ -1,9 +1,11 @@
 #NieR.sh to python port.
 #See https://www.youtube.com/watch?v=AczZoNeso04 for reference.
 
+#Required imports
 from os import system, name 
 from time import sleep
 
+#Creating a clear function based on system OS.
 def clear(): 
   if name == 'nt': 
     _ = system('cls') 
@@ -16,10 +18,7 @@ invalidCheck = 0
 #will question
 def will():
   global invalidCheck
-  clear()
-  invalid()
-  print("LOADING - CHECKING SYSTEM...")
-  print("")
+  questionStart()
   print("Will. From where does our will come?")
   print("1. It is born from nothingness.")
   print("2. It is given to us by God.")
@@ -38,10 +37,7 @@ def will():
 #nothingness question
 def nothingness():
   global invalidCheck
-  clear()
-  invalid()
-  print("LOADING - CHECKING SYSTEM...")
-  print("")
+  questionStart()
   print("Nothingness. Is there any meaning to living in this world?")
   print("1. Pray to God.")
   print("2. Hold true to your own will.")
@@ -60,10 +56,7 @@ def nothingness():
 #nothingness question
 def god():
   global invalidCheck
-  clear()
-  invalid()
-  print("LOADING - CHECKING SYSTEM...")
-  print("")
+  questionStart()
   print("God. How did God create us?")
   print("1. By random chance.")
   print("2. From nothingness.")
@@ -82,10 +75,7 @@ def god():
 #nothingness question
 def chance():
   global invalidCheck
-  clear()
-  invalid()
-  print("LOADING - CHECKING SYSTEM...")
-  print("")
+  questionStart()
   print("Chance. Was this world created by random chance?")
   print("1. All is according to Gods will.")
   print("2. It was not random. This world is filled with nothingness.")
@@ -104,10 +94,7 @@ def chance():
 #nothingness question
 def care():
   global invalidCheck
-  clear()
-  invalid()
-  print("LOADING - CHECKING SYSTEM...")
-  print("")
+  questionStart()
   print("The game is currently being installed.")
   print("You cannot continue playing the game until the install is completed.")
   print("Do you wish to discard everything and return to the title screen?")
@@ -124,6 +111,13 @@ def care():
   else:
     invalidCheck = 1
     care()
+
+def questionStart():
+  global invalidCheck
+  clear()
+  invalid()
+  print("LOADING - CHECKING SYSTEM...")
+  print("")
 
 def invalid():
   global invalidCheck
