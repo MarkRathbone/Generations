@@ -10,6 +10,9 @@ try:
     if req.status_code == 404:
         url = (str('https://www.youtube.com/c/') + str(channel))
         req = requests.get(url)
+        if req.status_code == 404:
+            url = (str('https://www.youtube.com/') + str(channel))
+            req = requests.get(url)
     ytsoup = BeautifulSoup(req.text, 'html.parser')
     rssline = ytsoup.find(title="RSS")
     rss = (rssline.get('href'))
