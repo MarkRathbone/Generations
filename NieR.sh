@@ -1,12 +1,8 @@
 #!/bin/bash
-#Nier Installation Clone
-#See https://www.youtube.com/watch?v=AczZoNeso04 for reference.
+#Nier Installation Clone: https://www.youtube.com/watch?v=AczZoNeso04
 
-#Resetting Invalid to 0
+#Resetting Invalid to 0 incase script has been uncleanly exited before..
 INVALID=0
-
-#Removing case match for exit question
-shopt -s nocasematch
 
 #Will Question
 function will {
@@ -111,13 +107,13 @@ echo 'You cannot continue playing the game until the install is completed.'
 echo 'Do you wish to discard everything and return to the title screen?'
 echo 'If you do, you will lose any unsaved data'
 read -n 1 -p "y or n?" answer
-	if [ "$answer" = "y" ]; then
+	if [ "${answer,,}" = "y" ]; then
 		clear
 		echo 'Thank you for playing'
 		sleep 1
 		clear
 		exit
-	elif [ "$answer" = "n" ]; then
+	elif [ "${answer,,}" = "n" ]; then
 		will
 	else
 		INVALID=1
