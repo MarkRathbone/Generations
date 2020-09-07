@@ -17,3 +17,5 @@ ytsoup.py: YouTube page scraper, gets the 15 most recent videos from a channels 
 primenumbers.py: A pythong challenge lab to make a script that calculates prime numbers between 2 listed integers and writes results to results.txt
 
 lambda_function.py: The python script from the lambda challenge lab. Lambda function to print the length of the .txt file in my bucket.
+
+Other stuff: I also created https://markrathbonetwo.github.io/ in order to learn Github actions without effecting my own personal website in the mean time.
